@@ -1,3 +1,7 @@
+output "log_analytics_datasource_windows_performance_counters_id" {
+  description = "Map of id values across all log_analytics_datasource_windows_performance_counters, keyed the same as var.log_analytics_datasource_windows_performance_counters"
+  value       = { for k, v in azurerm_log_analytics_datasource_windows_performance_counter.log_analytics_datasource_windows_performance_counters : k => v.id }
+}
 output "log_analytics_datasource_windows_performance_counters_counter_name" {
   description = "Map of counter_name values across all log_analytics_datasource_windows_performance_counters, keyed the same as var.log_analytics_datasource_windows_performance_counters"
   value       = { for k, v in azurerm_log_analytics_datasource_windows_performance_counter.log_analytics_datasource_windows_performance_counters : k => v.counter_name }
